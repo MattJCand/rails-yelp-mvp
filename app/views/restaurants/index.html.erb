@@ -1,0 +1,26 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to "Yelp Clone", restaurants_path%>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to "New restaurant", new_restaurant_path%>
+  </div>
+</div>
+
+<h1>Welcome to Yelp clone</h1>
+
+
+
+<div class="container">
+  <div class="row">
+   <%@restaurants.each do |restaurant|%>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card">
+          <div class="card-description">
+            <%= link_to restaurant.name, restaurant_path(restaurant)%>
+          </div>
+    </div>
+  </div>
+   <% end %>
+</div>

@@ -1,0 +1,18 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to "Yelp Clone", restaurants_path, class: "btn btn-primary"%>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12" style="margin-top: 10%;">
+      <%= simple_form_for(@restaurant) do |f| %>
+      <%= f.input :name, placeholder:"Mama Roma"%>
+       <%= f.input :category, placeholder:"italian"%>
+      <%= f.input :address, placeholder: "52 rue Oberkampf"%>
+       <%= f.input :phone_number, placeholder: "0102030405"%>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

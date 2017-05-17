@@ -1,0 +1,56 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to "Yelp Clone", restaurants_path, class: "btn btn-primary"%>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to "Add Rating", new_restaurant_review_path(@restaurant) %>
+  </div>
+</div>
+
+<div class="container">
+  <h2><%= @restaurant.name %></h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Categorie</th>
+        <th>Address</th>
+        <th>Tel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @restaurant.category %></td>
+        <td><%= @restaurant.address %></td>
+        <td><%= @restaurant.phone_number %></td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="container">
+<h3>Reviews</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Content</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+     <% @restaurant.reviews.each do |review| %>
+      <tr>
+        <td><%= review.content %></td>
+        <td><%= review.rating %></td>
+      </tr>
+      <% end %>
+      <tr>
+    </tbody>
+  </table>
+</div>
+
+
+
