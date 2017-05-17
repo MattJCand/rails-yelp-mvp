@@ -44,7 +44,9 @@
      <% @restaurant.reviews.each do |review| %>
       <tr>
         <td><%= review.content %></td>
-        <td><%= review.rating %></td>
+        <td><% review.rating.times do  %>
+          <i class="fa fa-star"></i>
+        <% end %></td>
       </tr>
       <% end %>
       <tr>
